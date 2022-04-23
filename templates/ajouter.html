@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ma super Application</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/mini.css') }}" />
+</head>
+<body>
+    <h1>Base de données</h1>
+    <h2>Ajouter un nouvel élève.</h2>
+    <form action="/add-student" method="POST">
+        <div class="form-field">
+            <label>Nom : </label>
+            <input type="text" name="nom" value="" />
+        </div>
+        <div class="form-field">
+            <label>Prénom :</label>
+            <input type="text" name="prenom" value="" />
+        </div>
+        <div class="form-field">
+            <label>Naissance : </label>
+            <input type="text" name="naissance" value=""/>
+        </div>
+        <div class="form-field">
+            <label>Etablissement : </label>
+            <input type="text" name="etablissement" value=""/>
+        </div>
+		<div class="form-field">
+            <label>Académie : </label>
+        <input type="text" name="academie" value=""/>
+        </div>
+		<input type="submit" value="Ajouter" />
+    </form>
+
+</body>
+</html>

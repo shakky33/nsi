@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Test bdd</h1>
+    <p>Liste des personnes dans la base de données de chez moi.</p>
+    <ul>
+    {% for colonne in personnes %}
+        <li>Matricule={{ colonne[0] }}, Nom={{ colonne[1] }}, Prenom={{ colonne[2] }}, DateDeNaissance={{ colonne[3] }}, Etablissement={{ colonne[4] }}, Academie={{ colonne[5] }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

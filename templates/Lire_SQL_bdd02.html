@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ma super Application</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/mini.css') }}" />
+
+</head>
+<body>
+    <h1>Base de données</h1>
+    <h2>Liste des personnes dans la base de données.</h2>
+	<form action="/recherche" method="POST">
+        <label>Rechercher des élèves par nom : </label>
+        <input type="text" name="nom" value="" />
+        <input type="submit" value="Rechercher" />
+    </form>
+    <div> 
+		<form action="/afficher-formulaire">
+			<label>Ajouter un élève :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp </label>
+			<input type="submit" value="Ajouter" />
+
+		</form>
+		
+	</div>
+	<br> </br>
+	
+    <table>
+        <tr>
+            <th>Matricule</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>DateDeNaissance</th>
+            <th>Etablissement</th>
+            <th>Academie</th>
+            <th>Actions</th>
+        </tr>
+
+
+        {% for colonne in personnes %}
+            <tr>
+            <td>{{colonne[0]}}</td>
+            <td>{{colonne[1]}}</td>
+            <td>{{colonne[2]}}</td>
+            <td>{{colonne[3]}}</td>
+            <td>{{colonne[4]}}</td>
+            <td>{{colonne[5]}}</td>
+            <td><a href="/delete-student/{{ colonne[0] }}">Supprimer</a> <a href="/modifier-formulaire/{{ colonne[0] }}">Modifier</a></td>
+            </tr>
+        {% endfor %}
+		
+		
+    </table>
+
+
+</body>
+</html>

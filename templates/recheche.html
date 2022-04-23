@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bonjour v0.5</title>
+</head>
+<body>
+
+    <tr>
+        {% for colonne in personnes %}
+           <li> <td>{{ colonne[0] }}</td>
+            <td>{{ colonne[1] }}</td>
+            <td>{{ colonne[2] }}</td>
+            <td>{{ colonne[3] }}</td>
+            <td>{{ colonne[4] }}</td>
+            <td>{{ colonne[5] }}</td> </li></tr>
+        {% endfor %}
+</body>
+</html>
